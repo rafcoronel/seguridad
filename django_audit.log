@@ -3515,3 +3515,13 @@ INFO 2025-06-10 18:03:01,102 views 1980 5336 Usuario no autenticado o no-admin v
 INFO 2025-06-10 18:03:01,832 basehttp 1980 5336 "GET / HTTP/1.1" 200 5013
 INFO 2025-06-10 18:03:01,891 basehttp 1980 5336 "GET /media/portadas/crime__y_castigo.jpg HTTP/1.1" 304 0
 INFO 2025-06-10 18:03:01,891 basehttp 1980 4100 "GET /media/portadas/camus.jpg HTTP/1.1" 304 0
+INFO 2025-06-10 18:05:52,067 basehttp 1980 12388 "GET /accounts/login/ HTTP/1.1" 200 3767
+INFO 2025-06-10 18:05:53,183 basehttp 1980 12388 "GET /accounts/login/ HTTP/1.1" 200 3767
+INFO 2025-06-10 18:05:53,585 basehttp 1980 12388 "GET /accounts/login/ HTTP/1.1" 200 3767
+INFO 2025-06-10 18:05:53,646 basehttp 1980 12388 "GET /accounts/login/ HTTP/1.1" 200 3767
+INFO 2025-06-10 18:05:54,045 basehttp 1980 12388 "GET /accounts/login/ HTTP/1.1" 200 3767
+INFO 2025-06-10 18:06:02,564 basehttp 1980 12388 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-06-10 18:06:03,967 views 1980 12388 Usuario no autenticado o no-admin viendo libros públicos.
+INFO 2025-06-10 18:06:04,355 basehttp 1980 12388 "GET / HTTP/1.1" 200 5011
+INFO 2025-06-10 18:06:04,511 basehttp 1980 8172 "GET /media/portadas/camus.jpg HTTP/1.1" 200 152641
+INFO 2025-06-10 18:06:04,513 basehttp 1980 12388 "GET /media/portadas/crime__y_castigo.jpg HTTP/1.1" 200 9119
