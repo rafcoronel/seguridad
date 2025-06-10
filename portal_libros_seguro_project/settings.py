@@ -29,10 +29,7 @@ SECRET_KEY = 'django-insecure-$8!c57=0wfg)x-lf-razz%b3lwmbf%fc5x!9ln4mjd*a2h2mi9
 #DEBUG = True
 DEBUG = os.getenv("DEBUG","False") == "TRUE"
 
-fdf
-ds
-fds
-finally
+
 ALLOWED_HOSTS = ['*']
 
 
