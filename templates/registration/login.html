@@ -11,7 +11,7 @@
             </div>
             <div class="card-body">
                 <form method="post">
-                    {% csrf_token %} {# ¡MUY IMPORTANTE para la seguridad CSRF! #}
+                    {% csrf_token %}
                     {% for field in form %}
                     <div class="mb-3">
                         {{ field.label_tag }}
@@ -24,10 +24,12 @@
                         {% endfor %}
                     </div>
                     {% endfor %}
+                    {# AÑADE ESTA LÍNEA AQUÍ #}
+                    <input type="hidden" name="next" value="/" />
+                    {# FIN DE LA LÍNEA A AÑADIR #}
                     <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
                 </form>
             </div>
-            {# En login.html #}
             <div class="card-footer text-center">
                 <small>¿No tienes una cuenta? <a href="{% url 'register' %}">Regístrate aquí</a></small>
             </div>

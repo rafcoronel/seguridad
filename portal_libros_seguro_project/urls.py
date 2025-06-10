@@ -31,5 +31,6 @@ urlpatterns = [
 
 # Configuración para servir archivos media (imágenes, PDFs) en desarrollo
 # ¡NO USAR ESTO EN PRODUCCIÓN!
-if settings.DEBUG:
+if settings.DEBUG: # Este bloque debe estar al final de tu urlpatterns
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

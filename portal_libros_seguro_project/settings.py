@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 import dj_database_url
 import os # Asegúrate de que esta línea esté al principio del archivo
-#from decouple import config # Necesitarás instalar django-decouple para esto
+from decouple import config # Necesitarás instalar django-decouple para esto
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,8 +26,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$8!c57=0wfg)x-lf-razz%b3lwmbf%fc5x!9ln4mjd*a2h2mi9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = os.getenv("DEBUG","False") == "TRUE"
+DEBUG = True
+#DEBUG = os.getenv("DEBUG","False") == "TRUE"
 
 
 ALLOWED_HOSTS = ['*']
@@ -80,19 +80,14 @@ WSGI_APPLICATION = 'portal_libros_seguro_project.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.getenv("DATABASE_URL")
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+DATABASES["default"] = dj_database_url.parse("postgresql://libros_django_render_user:I1Td3EG71a06swNZfUC9Cn8lQyGf9W3B@dpg-d14934vfte5s73cjmp60-a.oregon-postgres.render.com/libros_django_render")
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -138,13 +133,11 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') #nuevo tambiem
 # Configuración para archivos MEDIA (archivos subidos por los usuarios, como portadas y PDFs)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles') # Carpeta donde se guardarán los archivos subidos (libros, portadas)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Asegúrate de que apunte a la carpeta 'media' en la raíz de tu proyecto
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
-
-# URL a la que redirigir después de un inicio de sesión exitoso
-LOGIN_REDIRECT_URL = '/' # Redirige a la página principal después de login
 
 # URL a la que redirigir después de un cierre de sesión exitoso
 LOGOUT_REDIRECT_URL = '/' # Redirige a la página principal después de logout
