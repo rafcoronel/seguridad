@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ libro.titulo }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+        {% if libro.portada %}
+            <img src="{{ libro.portada.url }}" class="img-fluid rounded shadow-sm" alt="{{ libro.titulo }}">
+        {% else %}
+            <img src="https://via.placeholder.com/400x600?text=No+Portada" class="img-fluid rounded shadow-sm" alt="Sin Portada">
+        {% endif %}
+    </div>
+    <div class="col-md-8">
+        <h1>{{ libro.titulo }}</h1>
+        <p class="lead text-muted">por {{ libro.autor }}</p>
+        <p><strong>Género:</strong> {{ libro.genero|default:"N/A" }}</p>
+        <p><strong>Publicación:</strong> {{ libro.fecha_publicacion|date:"d M Y"|default:"N/A" }}</p>
+        {% if libro.isbn %}<p><strong>ISBN:</strong> {{ libro.isbn }}</p>{% endif %}
+        <hr>
+        <h4>Descripción:</h4>
+        <p>{{ libro.descripcion|default:"No hay descripción disponible para este libro." }}</p>
+
+        {% if libro.documento_pdf %}
+            <a href="{{ libro.documento_pdf.url }}" class="btn btn-info mb-3" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-file-earmark-pdf-fill"></i> Ver PDF
+            </a>
+        {% endif %}
+
+        <div class="mt-4">
+            {% if user.is_authenticated and user == libro.usuario_carga or user.is_authenticated and user.is_superuser %}
+                <a href="{% url 'actualizar_libro' pk=libro.pk %}" class="btn btn-warning btn-sm me-2">Editar Libro</a>
+                <a href="{% url 'eliminar_libro' pk=libro.pk %}" class="btn btn-danger btn-sm">Eliminar Libro</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<hr class="my-5">
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <h3>Comentarios ({{ comentarios.count }})</h3>
+        <div class="card mb-4">
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                    <form action="{% url 'detalle_libro' pk=libro.pk %}" method="post">
+                        {% csrf_token %}
+                        {{ form_comentario.texto }}
+                        <button type="submit" class="btn btn-success mt-2">Añadir Comentario</button>
+                    </form>
+                {% else %}
+                    <p class="text-center">Por favor, <a href="{% url 'login' %}">inicia sesión</a> para dejar un comentario.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if comentarios %}
+            {% for comentario in comentarios %}
+            <div class="card mb-2 shadow-sm">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">{{ comentario.usuario.username }} <small class="float-end">{{ comentario.fecha_creacion|date:"d M Y, H:i" }}</small></h6>
+                    <p class="card-text">{{ comentario.texto }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p class="text-center text-muted">Sé el primero en comentar este libro.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
