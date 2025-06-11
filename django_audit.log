@@ -3525,3 +3525,50 @@ INFO 2025-06-10 18:06:03,967 views 1980 12388 Usuario no autenticado o no-admin 
 INFO 2025-06-10 18:06:04,355 basehttp 1980 12388 "GET / HTTP/1.1" 200 5011
 INFO 2025-06-10 18:06:04,511 basehttp 1980 8172 "GET /media/portadas/camus.jpg HTTP/1.1" 200 152641
 INFO 2025-06-10 18:06:04,513 basehttp 1980 12388 "GET /media/portadas/crime__y_castigo.jpg HTTP/1.1" 200 9119
+INFO 2025-06-10 22:47:42,806 autoreload 11884 12544 Watching for file changes with StatReloader
+INFO 2025-06-10 22:47:48,983 views 11884 9560 Usuario no autenticado o no-admin viendo libros públicos.
+INFO 2025-06-10 22:47:51,264 basehttp 11884 9560 "GET / HTTP/1.1" 200 3957
+INFO 2025-06-10 22:47:51,474 basehttp 11884 9560 "GET /media/portadas/crime__y_castigo.jpg HTTP/1.1" 200 9119
+INFO 2025-06-10 22:47:51,477 basehttp 11884 2720 "GET /media/portadas/camus.jpg HTTP/1.1" 200 152641
+WARNING 2025-06-10 22:47:52,998 log 11884 8260 Not Found: /favicon.ico
+WARNING 2025-06-10 22:47:52,999 basehttp 11884 8260 "GET /favicon.ico HTTP/1.1" 404 4525
+INFO 2025-06-10 22:49:50,267 views 11884 15332 Usuario no autenticado o no-admin viendo libros públicos.
+INFO 2025-06-10 22:49:52,722 basehttp 11884 15332 "GET / HTTP/1.1" 200 3957
+INFO 2025-06-10 22:49:54,477 basehttp 11884 4112 "GET /accounts/login/ HTTP/1.1" 200 3767
+INFO 2025-06-10 22:50:04,434 basehttp 11884 4112 "POST /accounts/login/ HTTP/1.1" 200 3782
+INFO 2025-06-10 22:50:53,031 basehttp 11884 3360 "POST /accounts/login/ HTTP/1.1" 302 0
+INFO 2025-06-10 22:50:54,569 views 11884 3360 Usuario no autenticado o no-admin viendo libros públicos.
+INFO 2025-06-10 22:50:55,031 basehttp 11884 3360 "GET / HTTP/1.1" 200 5013
+INFO 2025-06-10 22:50:58,122 views 11884 3360 Mostrando detalle del libro 'La Peste'.
+INFO 2025-06-10 22:50:59,621 basehttp 11884 3360 "GET /libro/2/ HTTP/1.1" 200 5403
+INFO 2025-06-10 22:51:01,401 basehttp 11884 3360 "GET /media/libros_pdf/Victor-Hugo-Viscarra-Borracho-estaba-pero-me-acuerdo.pdf HTTP/1.1" 200 957411
+INFO 2025-06-10 22:51:07,203 basehttp 11884 11520 "GET /libro/crear/ HTTP/1.1" 200 7219
+INFO 2025-06-10 22:55:38,915 views 11884 8124 Usuario 'rafcor' creó el libro 'La Náusea'.
+INFO 2025-06-10 22:55:38,917 basehttp 11884 8124 "POST /libro/crear/ HTTP/1.1" 302 0
+INFO 2025-06-10 22:55:40,380 views 11884 8124 Usuario no autenticado o no-admin viendo libros públicos.
+INFO 2025-06-10 22:55:40,770 basehttp 11884 8124 "GET / HTTP/1.1" 200 5830
+INFO 2025-06-10 22:55:40,822 basehttp 11884 8124 "GET /media/portadas/nausea.jpg HTTP/1.1" 200 7124
+INFO 2025-06-10 22:55:45,592 views 11884 8124 Mostrando detalle del libro 'La Náusea'.
+INFO 2025-06-10 22:55:47,259 basehttp 11884 8124 "GET /libro/3/ HTTP/1.1" 200 5174
+INFO 2025-06-10 22:55:47,286 basehttp 11884 8124 "GET /media/portadas/nausea.jpg HTTP/1.1" 304 0
+INFO 2025-06-10 22:55:48,628 basehttp 11884 8124 "GET /media/libros_pdf/Lautreamont_Conde_De_-_Los_Cantos_de_Maldoror_f3UEnnH.pdf HTTP/1.1" 200 938872
+INFO 2025-06-10 22:55:54,781 views 11884 8124 Usuario no autenticado o no-admin viendo libros públicos.
+INFO 2025-06-10 22:55:55,418 basehttp 11884 8124 "GET / HTTP/1.1" 200 5830
+INFO 2025-06-10 22:55:55,447 basehttp 11884 8124 "GET /media/portadas/nausea.jpg HTTP/1.1" 304 0
+INFO 2025-06-10 22:55:58,854 views 11884 8124 Mostrando detalle del libro 'Crimen y Castigo'.
+INFO 2025-06-10 22:56:00,493 basehttp 11884 8124 "GET /libro/1/ HTTP/1.1" 200 5456
+INFO 2025-06-10 22:57:32,953 views 11884 8124 Usuario no autenticado o no-admin viendo libros públicos.
+INFO 2025-06-10 22:57:33,381 basehttp 11884 8124 "GET / HTTP/1.1" 200 5830
+INFO 2025-06-10 22:57:33,402 basehttp 11884 8124 "GET /media/portadas/nausea.jpg HTTP/1.1" 304 0
+INFO 2025-06-10 22:57:37,086 views 11884 8124 Mostrando detalle del libro 'La Náusea'.
+INFO 2025-06-10 22:57:38,121 basehttp 11884 8124 "GET /libro/3/ HTTP/1.1" 200 5174
+INFO 2025-06-10 22:57:48,039 views 11884 8124 Usuario 'rafcor' añadió un comentario al libro 'La Náusea'.
+INFO 2025-06-10 22:57:48,040 basehttp 11884 8124 "POST /libro/3/ HTTP/1.1" 302 0
+INFO 2025-06-10 22:57:49,530 views 11884 8124 Mostrando detalle del libro 'La Náusea'.
+INFO 2025-06-10 22:57:51,154 basehttp 11884 8124 "GET /libro/3/ HTTP/1.1" 200 5430
+INFO 2025-06-10 22:57:51,173 basehttp 11884 8124 "GET /media/portadas/nausea.jpg HTTP/1.1" 304 0
+INFO 2025-06-10 22:58:22,479 views 11884 11324 Mostrando detalle del libro 'La Náusea'.
+INFO 2025-06-10 22:58:23,732 basehttp 11884 11324 "GET /libro/3/ HTTP/1.1" 200 5430
+INFO 2025-06-10 22:58:23,792 basehttp 11884 11324 "GET /media/portadas/nausea.jpg HTTP/1.1" 200 7124
+WARNING 2025-06-10 22:58:23,913 log 11884 11324 Not Found: /favicon.ico
+WARNING 2025-06-10 22:58:23,916 basehttp 11884 11324 "GET /favicon.ico HTTP/1.1" 404 4525

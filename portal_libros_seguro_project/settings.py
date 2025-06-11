@@ -23,14 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$8!c57=0wfg)x-lf-razz%b3lwmbf%fc5x!9ln4mjd*a2h2mi9'
+#SECRET_KEY = 'django-insecure-$8!c57=0wfg)x-lf-razz%b3lwmbf%fc5x!9ln4mjd*a2h2mi9'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = os.getenv("DEBUG","False") == "TRUE"
+#DEBUG = True
+DEBUG = os.environ.get("DEBUG","False").lower() == "true"
 
 
 ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS").split(" ")
 
 
 # Application definition
@@ -87,7 +89,8 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgresql://libros_django_render_user:I1Td3EG71a06swNZfUC9Cn8lQyGf9W3B@dpg-d14934vfte5s73cjmp60-a.oregon-postgres.render.com/libros_django_render")
+database_url = os.environ.get("DATABASE_URL")
+DATABASES["default"] = dj_database_url.parse(database_url)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
